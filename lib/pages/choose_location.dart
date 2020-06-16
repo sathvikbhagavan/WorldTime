@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:worldtime/services/world_time.dart';
@@ -16,7 +17,8 @@ class _ChooseLocationState extends State<ChooseLocation> {
     WorldTime(url: 'America/New_York', location: 'New York', flag: 'usa.png'),
     WorldTime(url: 'Asia/Seoul', location: 'Seoul', flag: 'south_korea.png'),
     WorldTime(url: 'Asia/Jakarta', location: 'Jakarta', flag: 'indonesia.png'),
-    WorldTime(url: 'Europe/Berlin', location: 'Berlin', flag: 'germany.png')
+    WorldTime(url: 'Europe/Berlin', location: 'Berlin', flag: 'germany.png'),
+    WorldTime(url: 'Asia/Kolkata', location: 'Mumbai', flag: 'india.png'),
   ];
 
   void updateTime(int index) async{
@@ -33,6 +35,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
       'day' : instance.day
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
